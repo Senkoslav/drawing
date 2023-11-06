@@ -1,5 +1,5 @@
 const timerElement = document.getElementById('timer');
-let timeLeft = 5 * 60;
+let timeLeft = 1.5 * 60;
 let timerInterval;
 
 const saveDrawing = () => {
