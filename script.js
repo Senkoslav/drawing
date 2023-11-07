@@ -112,6 +112,39 @@ saveImg.addEventListener("click", () => {
   link.click();
 });
 
+const stencilImages = [
+  "icons/graffiti/graf1.png",
+  "icons/graffiti/graf2.png",
+  "icons/graffiti/graf3.png",
+  "icons/graffiti/graf4.png",
+  "icons/graffiti/graf5.png",
+  "icons/graffiti/graf6.png"
+];
+
+const stencilImage = document.getElementById("stencil");
+
+document.addEventListener("DOMContentLoaded", function() {
+
+  const loadRandomStencil = () => {
+    const randomStencil = stencilImages[Math.floor(Math.random() * stencilImages.length)];
+    stencilImage.src = randomStencil;
+  }
+
+  loadRandomStencil();
+});
+
+
+stencilImage.addEventListener("mouseenter", () => {
+  canvas.style.pointerEvents = "none"; // Откл события мыши для canvas
+  stencilImage.style.pointerEvents = "auto"; // Вкл события мыши для картинки
+});
+
+stencilImage.addEventListener("mouseleave", () => {
+  canvas.style.pointerEvents = "auto"; // Вкл события мыши для canvas
+  stencilImage.style.pointerEvents = "none"; // Откл события мыши для картинки
+});
+
+
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", () => isDrawing = false);

@@ -136,21 +136,21 @@ section{
   border: 1px solid #4A98F7;
 }
 .drawing-board{
+  position: relative;
   flex: 1;
   overflow: hidden;
 }
 .drawing-board canvas{
   width: 100%;
   height: 100%;
-}
-.img1{
-  width: 250px;
-  height: 250px;
-  border-radius: 7px;
-  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
 .drawing-board-img{
+  width: 150px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -166,4 +166,15 @@ section{
   border-radius: 50%;
   z-index: 9999;
   pointer-events: none;
+}
+
+#stencil {
+  position: absolute;
+  width: 300px; 
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.4;
+  z-index: 2;
 }
